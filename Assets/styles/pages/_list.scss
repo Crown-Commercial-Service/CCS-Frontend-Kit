@@ -1,0 +1,41 @@
+.text-white{
+    color: white;
+}
+
+.guided-match-background{
+    background-color: #78256E;
+}
+
+.guided-match-area{
+
+    .govuk-button {
+
+        background-color: white;
+        border-radius: govuk-px-to-rem(3);
+        box-shadow: 0 3px 0 #003618;
+        color: #78256E;
+        padding: 8px 10px 7px;
+
+        width: auto;
+        
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: #78256E; 
+            background-color: white;
+
+        }
+    }
+
+    .govuk-button__start-icon {
+        margin-left: govuk-spacing(1);
+    
+        @include govuk-media-query($from: desktop) {
+          margin-left: govuk-spacing(2);
+        }
+        vertical-align: middle;
+        flex-shrink: 0;
+        align-self: center;
+      }
+}
