@@ -1,4 +1,7 @@
 # CCS-Frontend-Kit
+Npm package that contains all the styles and assets of the CCS website. 
+This is so that any new projects can import the same css and keep the styles consistent across all applications in CCS.
+
 &nbsp;
 
   
