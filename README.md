@@ -24,20 +24,18 @@ check `node_modules` to find ccs-frontend-kit package
 &nbsp;
 
 
-### Copy fonts, images and scripts to your project
+### Copy fonts, images and scripts from Frontend Kit to your project
 
 At the root of your project:
 ```
-$ mkdir Assets && cd Assets
+$ mkdir Assets
 ```
-&nbsp;
 
-
-### Copy fonts, images and scripts into your Assets folder:
+Copy fonts, images and scripts into your Assets folder:
 ```
-$ cp ./node_modules/ccs-frontend-kit/Assets/fonts ./Assets
-$ cp ./node_modules/ccs-frontend-kit/Assets/images/ ./Assets
-$ cp ./node_modules/ccs-frontend-kit/Assets/scripts/ ./Assets
+$ cp -R ./node_modules/ccs-frontend-kit/Assets/fonts ./Assets/fonts
+$ cp -R ./node_modules/ccs-frontend-kit/Assets/images ./Assets/images
+$ cp -R ./node_modules/ccs-frontend-kit/Assets/scripts ./Assets/scripts
 ```
 (You can also add a script for this copy to package.json)
 
@@ -46,10 +44,9 @@ $ cp ./node_modules/ccs-frontend-kit/Assets/scripts/ ./Assets
 
 ### Copy the govuk package 
 ```
-$ cp ./node_modules/govuk-frontend/govuk ./Assets/scripts
+$ cp -R ./node_modules/govuk-frontend/govuk ./Assets/scripts/govuk
 ```
 &nbsp;
-
 
 ### Link the styles from ccs-frontend-kit to your project
 ```
@@ -59,17 +56,25 @@ $ touch main.scss
 ```
 Add the following line inside main.scss:
 ```
-@import "./../../node_modules/ccs-frontend-kit/Assets/styles/styles.scss/"
+@import "../../node_modules/ccs-frontend-kit/Assets/styles/styles.scss";
 ```
 If needed, modify this path so that it correctly points to the imported file.
 
-Compile scss into css :
-```
-$ sass main.scss main.css 
-```
-(You can also add a script for this in package.json)
+&nbsp;
 
-If there are errors during this compile, edit the import for `govuk-frontend/govuk/all` from inside the `./node_modules/ccs-frontend-kit/Assets/styles/styles.scss`, so that it points to the file correctly.
+### Compile scss into css:
+Add the following script to package.json:
+```
+"compile": "cd ./Assets/styles && sass main.scss main.css"
+```
+```
+$ npm run compile
+```
+
+If there are errors during this compile 
+edit the import for `govuk-frontend/govuk/all` 
+from inside the `./node_modules/ccs-frontend-kit/Assets/styles/styles.scss`, 
+so that it points to the file correctly.
 
 &nbsp;
 
@@ -82,17 +87,17 @@ $ touch index.html
 
 Inside the `<head>` tag, add a link tag pointing to your compiled main.css:
 ```
-<link rel="stylesheet" href=“./Assets/styles/main.css">
+<link rel="stylesheet" href="./Assets/styles/main.css">
 ```
 
 Add these scripts at the bottom of the `<body>` tag:
 ```
 <body>
   ...
-  <script src=“./Assets/scripts/libraries/jquery-1.12.4.js"></script>
-  <script src=“./Assets/scripts/libraries/objectFitPolyfill.js"></script>
-  <script src=“./Assets/scripts/app.js"></script>
-  <script src=“./Assets/scripts/govuk/all.js"></script>
+  <script src="./Assets/scripts/libraries/jquery-1.12.4.js"></script>
+  <script src="./Assets/scripts/libraries/objectFitPolyfill.js"></script>
+  <script src="./Assets/scripts/app.js"></script>
+  <script src="./Assets/scripts/govuk/all.js"></script>
 </body>
 ```
 Find and test a component by copying its markdown from https://gov.uk website.
