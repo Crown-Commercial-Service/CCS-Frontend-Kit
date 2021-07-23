@@ -9,7 +9,7 @@ PROD | https://webprod-cms.crowncommercial.gov.uk
 
 <br>
 
-![Screenshot of the Corporate Website's header and footer](https://github.com/Crown-Commercial-Service/ccsweb-docs/blob/master/header_and_footer.png?raw=true "Screenshot of the Corporate Website's header and footer")
+![Screenshot of the Corporate Website's header and footer](https://github.com/Crown-Commercial-Service/CCS-Frontend-Kit/blob/main/docs/header_and_footer.png?raw=true "Screenshot of the Corporate Website's header and footer")
 
 There are an endpoint for each of the menu we want and they are:
 
