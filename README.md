@@ -94,7 +94,7 @@ Add these scripts at the bottom of the `<body>` tag:
 ```
 <body>
   ...
-  <script src="./Assets/scripts/libraries/jquery-1.12.4.js"></script>
+  <script src="./Assets/scripts/libraries/jquery-3.6.0.js"></script>
   <script src="./Assets/scripts/libraries/objectFitPolyfill.js"></script>
   <script src="./Assets/scripts/app.js"></script>
   <script src="./Assets/scripts/govuk/all.js"></script>
